@@ -1,30 +1,34 @@
 package ru.yandex.practicum.tests;
 
 import org.junit.Test;
+import org.junit.runner.RunWith;
+import org.junit.runners.Parameterized;
 import ru.yandex.practicum.SpeedLight;
 
 import static org.junit.Assert.assertEquals;
 
+@RunWith(Parameterized.class)
 public class SpeedLightTest {
 
-    @Test
-    public void checkLightGreen() {
-        checkLight("green", 50);
+    private final String expectedColour;
+    private final int speed;
+
+    public SpeedLightTest(String expectedColour, int speed) {
+        this.expectedColour = expectedColour;
+        this.speed = speed;
     }
 
-    @Test
-    public void checkLightYellow() {
-        checkLight("yellow", 70);
+    @Parameterized.Parameters
+    public static Object[] data() {
+        return new Object[][]{
+                {"green", 50},
+                {"red", 90},
+                {"yellow", 70},
+        };
     }
-
     @Test
-    public void checkLightRed() {
-        checkLight("red", 90);
-    }
-
-
-    private static void checkLight(String expectedLight, int currentSpeed) {
+    public void checkLight() {
         SpeedLight speedLight = new SpeedLight();
-        assertEquals(expectedLight, speedLight.showLight(currentSpeed));
+        assertEquals(expectedColour, speedLight.showLight(speed));
     }
 }
