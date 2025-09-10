@@ -8,6 +8,7 @@ public class Main {
         System.out.println("Для демонстрации стратегии Merge");
         System.out.println("Больше конфликтов богу конфликтов");
         System.out.println("Для демонстрации стратегии Rebase");
+        System.out.println("Это для демонстрации PR");
 
         for (int i = 1; i <= 5; i++) {
 
