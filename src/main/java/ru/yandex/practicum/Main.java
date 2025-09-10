@@ -6,6 +6,7 @@ public class Main {
         System.out.printf("Hello and welcome!");
         System.out.println("Для создания конфликта");
         System.out.println("Для демонстрации стратегии Merge");
+        System.out.println("Больше конфликтов богу конфликтов");
 
         for (int i = 1; i <= 5; i++) {
 
