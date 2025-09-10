@@ -18,7 +18,7 @@ public class SpeedLightTest {
         this.speed = speed;
     }
 
-    @Parameterized.Parameters
+    @Parameterized.Parameters(name = "expected Light = {0}, speed = {1}")
     public static Object[] data() {
         return new Object[][]{
                 {"green", 50},
